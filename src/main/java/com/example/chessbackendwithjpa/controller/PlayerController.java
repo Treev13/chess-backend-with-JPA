@@ -25,11 +25,11 @@ public class PlayerController {
 
   @GetMapping("player/{id}")
   public Player getPlayerById(@PathVariable Long id) {
-    return playerService.getPlayersById(id);
+    return playerService.getPlayerById(id);
   }
 
   @PostMapping("player/new")
-  public void addPlayers(@RequestBody PlayerDTO player) {
+  public void addPlayer(@RequestBody PlayerDTO player) {
     playerService.addPlayer(player);
   }
 
