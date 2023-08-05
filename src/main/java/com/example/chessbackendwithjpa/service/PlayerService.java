@@ -45,6 +45,7 @@ public class PlayerService {
     updatedPlayer.setBorn(player.born());
     updatedPlayer.setEarnGM(player.earnGM());
     updatedPlayer.setCountry(player.country());
+    playerRepository.save(updatedPlayer);
   }
 
   public boolean deletePlayer(Long id) {
