@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("api/tours")
+@RequestMapping("/api")
 public class TournamentController {
   private final TournamentService tournamentService;
 
@@ -18,27 +18,27 @@ public class TournamentController {
     this.tournamentService = tournamentService;
   }
 
-  @GetMapping
+  @GetMapping("/tournaments")
   public List<Tournament> getTournaments() {
     return tournamentService.getTournaments();
   }
 
-  @GetMapping("tour/{id}")
+  @GetMapping("/tournament/{id}")
   public Tournament getTournamentById(@PathVariable Long id) {
     return tournamentService.getTournamentById(id);
   }
 
-  @PostMapping("tour/new")
+  @PostMapping("/tournament/new")
   public void addTournament(@RequestBody TournamentDTO tour) {
     tournamentService.addTournament(tour);
   }
 
-  @PutMapping("player/{id}")
+  @PutMapping("/tournament/{id}")
   public void updateTournament(@PathVariable Long id, @RequestBody TournamentDTO tour) {
     tournamentService.updateTournament(id, tour);
   }
 
-  @DeleteMapping("player/{id}")
+  @DeleteMapping("/tournament/{id}")
   public boolean deleteTournament(@PathVariable Long id) {
     return tournamentService.deleteTournament(id);
   }

@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("api/players")
+@RequestMapping("/api")
 public class PlayerController {
   private final PlayerService playerService;
 
@@ -18,27 +18,27 @@ public class PlayerController {
     this.playerService = playerService;
   }
 
-  @GetMapping
+  @GetMapping("/players")
   public List<Player> getPlayers() {
     return playerService.getPlayers();
   }
 
-  @GetMapping("player/{id}")
+  @GetMapping("/player/{id}")
   public Player getPlayerById(@PathVariable Long id) {
     return playerService.getPlayerById(id);
   }
 
-  @PostMapping("player/new")
+  @PostMapping("/player/new")
   public void addPlayer(@RequestBody PlayerDTO player) {
     playerService.addPlayer(player);
   }
 
-  @PutMapping("player/{id}")
+  @PutMapping("/player/{id}")
   public void updatePlayer(@PathVariable Long id, @RequestBody PlayerDTO player) {
     playerService.updatePlayer(id, player);
   }
 
-  @DeleteMapping("player/{id}")
+  @DeleteMapping("/player/{id}")
   public boolean deletePlayer(@PathVariable Long id) {
     return playerService.deletePlayer(id);
   }
