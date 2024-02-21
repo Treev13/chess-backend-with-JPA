@@ -1,6 +1,5 @@
 package com.example.chessbackendwithjpa.model;
 
-import com.example.chessbackendwithjpa.model.Player;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -8,7 +7,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.sql.Date;
-import java.util.Set;
 @Data
 @Builder
 @NoArgsConstructor

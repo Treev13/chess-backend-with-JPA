@@ -6,7 +6,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.Date;
+import java.sql.Date;
 import java.util.Set;
 @Data
 @Builder
@@ -23,7 +23,7 @@ public class Player {
   private String nationality;
   private Date born;
   private Integer earnGM;
-  private String bornCountry;
+  private String country;
   /*@ManyToMany
   @JoinTable(
           name = "tournamentsByPlayer",

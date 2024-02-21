@@ -1,7 +1,7 @@
 package com.example.chessbackendwithjpa.controller.dto;
 
 import java.time.LocalDate;
-import java.util.Date;
+import java.sql.Date;
 
 public record PlayerDTO(
         Long id,
@@ -10,5 +10,5 @@ public record PlayerDTO(
         String nationality,
         Date born,
         int earnGM,
-        String bornCountry
+        String country
 ) { }
