@@ -22,8 +22,17 @@ public class PlayerService {
     return playerRepository.findAll();
   }
 
-  public Player getPlayerById(Long id) {
-    return playerRepository.getReferenceById(id);
+  public PlayerDTO getPlayerById(Long id) {
+    Player player = playerRepository.getReferenceById(id);
+    return new PlayerDTO(
+            player.getId(),
+            player.getName(),
+            player.getFideId(),
+            player.getNationality(),
+            player.getBorn(),
+            player.getEarnGM(),
+            player.getBornCountry()
+      );
   }
   /*public List<ScoresByPlayerDTO> getToursByPlayer(Long id) {
     return playerRepository.getToursByPlayer(id);

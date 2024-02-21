@@ -24,11 +24,11 @@ public class Player {
   private Date born;
   private Integer earnGM;
   private String bornCountry;
-  @ManyToMany
+  /*@ManyToMany
   @JoinTable(
           name = "tournamentsByPlayer",
           joinColumns = @JoinColumn(name = "player_id"),
           inverseJoinColumns = @JoinColumn(name = "tournament_id")
   )
-  private Set<Tournament> tournaments;
+  private Set<Tournament> tournaments;*/
 }
