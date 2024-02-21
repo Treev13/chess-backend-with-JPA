@@ -26,6 +26,6 @@ public class Tournament {
   private Date endDate;
   private int numberOfPlayers;
   private String type;
-  @ManyToMany(mappedBy = "tournaments")
-  private Set<Player> players;
+  /*@ManyToMany(mappedBy = "tournaments")
+  private Set<Player> players;*/
 }

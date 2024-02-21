@@ -3,11 +3,13 @@ package com.example.chessbackendwithjpa.controller.dto;
 import java.sql.Date;
 
 public record TournamentDTO(
-        String id,
+        Long id,
         String name,
+        String shortName,
         String site,
         Date startDate,
         Date endDate,
-        int numberOfPlayers
+        int numberOfPlayers,
+        String type
 ) {
 }

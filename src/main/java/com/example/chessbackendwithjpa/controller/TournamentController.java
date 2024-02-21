@@ -24,7 +24,7 @@ public class TournamentController {
   }
 
   @GetMapping("/tournament/{id}")
-  public Tournament getTournamentById(@PathVariable Long id) {
+  public TournamentDTO getTournamentById(@PathVariable Long id) {
     return tournamentService.getTournamentById(id);
   }
 
