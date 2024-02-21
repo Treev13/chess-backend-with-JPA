@@ -29,10 +29,10 @@ public class PlayerController {
     return playerService.getPlayerById(id);
   }
 
-  /*@GetMapping("/player/{id}/tours")
+  @GetMapping("/player/{id}/tours")
   public List <ScoresByPlayerDTO> getToursByPlayer(@PathVariable Long id) {
     return playerService.getToursByPlayer(id);
-  }*/
+  }
 
   @PostMapping("/player/new")
   public void addPlayer(@RequestBody PlayerDTO player) {
