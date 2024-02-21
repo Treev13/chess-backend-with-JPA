@@ -14,16 +14,18 @@ import java.util.Set;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "tours")
+@Table(name = "tournaments")
 public class Tournament {
   @Id
   @GeneratedValue(strategy = GenerationType.SEQUENCE)
   private Long id;
   private String name;
+  private String shortName;
   private String site;
-  private Date start;
-  private Date end;
+  private Date startDate;
+  private Date endDate;
   private int numberOfPlayers;
+  private String type;
   @ManyToMany(mappedBy = "tournaments")
   private Set<Player> players;
 }

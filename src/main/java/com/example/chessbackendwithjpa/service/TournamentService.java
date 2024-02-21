@@ -28,8 +28,8 @@ public class TournamentService {
     Tournament newTour = Tournament.builder()
             .name(tour.name())
             .site(tour.site())
-            .start(tour.start())
-            .end(tour.end())
+            .startDate(tour.startDate())
+            .endDate(tour.endDate())
             .numberOfPlayers(tour.numberOfPlayers())
             .build();
     tournamentRepository.save(newTour);
@@ -39,8 +39,8 @@ public class TournamentService {
     Tournament updatedTour = tournamentRepository.getById(id);
     updatedTour.setName(tour.name());
     updatedTour.setSite(tour.site());
-    updatedTour.setStart(tour.start());
-    updatedTour.setEnd(tour.end());
+    updatedTour.setStartDate(tour.startDate());
+    updatedTour.setEndDate(tour.endDate());
     updatedTour.setNumberOfPlayers(tour.numberOfPlayers());
     tournamentRepository.save(updatedTour);
   }

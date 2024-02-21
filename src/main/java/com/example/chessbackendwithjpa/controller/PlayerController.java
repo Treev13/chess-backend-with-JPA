@@ -1,6 +1,7 @@
 package com.example.chessbackendwithjpa.controller;
 
 import com.example.chessbackendwithjpa.controller.dto.PlayerDTO;
+import com.example.chessbackendwithjpa.controller.dto.ScoresByPlayerDTO;
 import com.example.chessbackendwithjpa.model.Player;
 import com.example.chessbackendwithjpa.service.PlayerService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,6 +28,11 @@ public class PlayerController {
   public Player getPlayerById(@PathVariable Long id) {
     return playerService.getPlayerById(id);
   }
+
+  /*@GetMapping("/player/{id}/tours")
+  public List <ScoresByPlayerDTO> getToursByPlayer(@PathVariable Long id) {
+    return playerService.getToursByPlayer(id);
+  }*/
 
   @PostMapping("/player/new")
   public void addPlayer(@RequestBody PlayerDTO player) {

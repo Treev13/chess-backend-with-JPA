@@ -23,7 +23,7 @@ public class Player {
   private String nationality;
   private Date born;
   private Integer earnGM;
-  private String country;
+  private String bornCountry;
   @ManyToMany
   @JoinTable(
           name = "tournamentsByPlayer",

@@ -1,6 +1,7 @@
 package com.example.chessbackendwithjpa.service;
 
 import com.example.chessbackendwithjpa.controller.dto.PlayerDTO;
+import com.example.chessbackendwithjpa.controller.dto.ScoresByPlayerDTO;
 import com.example.chessbackendwithjpa.model.Player;
 import com.example.chessbackendwithjpa.repository.PlayerRepository;
 import org.springframework.stereotype.Service;
@@ -22,17 +23,19 @@ public class PlayerService {
   }
 
   public Player getPlayerById(Long id) {
-    return playerRepository.getById(id);
+    return playerRepository.getReferenceById(id);
   }
+  /*public List<ScoresByPlayerDTO> getToursByPlayer(Long id) {
+    return playerRepository.getToursByPlayer(id);
+  }*/
 
   public void addPlayer(PlayerDTO player) {
     Player newPlayer = Player.builder()
             .name(player.name())
             .fideId(player.fideId())
-            .nationality(player.nationality())
             .born(player.born())
             .earnGM(player.earnGM())
-            .country(player.country())
+            .bornCountry(player.bornCountry())
             .build();
     playerRepository.save(newPlayer);
   }
@@ -44,7 +47,7 @@ public class PlayerService {
     updatedPlayer.setNationality(player.nationality());
     updatedPlayer.setBorn(player.born());
     updatedPlayer.setEarnGM(player.earnGM());
-    updatedPlayer.setCountry(player.country());
+    updatedPlayer.setBornCountry(player.bornCountry());
     playerRepository.save(updatedPlayer);
   }
 
@@ -55,4 +58,5 @@ public class PlayerService {
     }
     return false;
   }
+
 }

@@ -4,11 +4,12 @@ import java.time.LocalDate;
 import java.util.Date;
 
 public record PlayerDTO(
+        int id,
         String name,
-        int fide_id,
-        LocalDate born,
+        int fideId,
+        String nationality,
+        Date born,
         String born_place,
-        int earn_gm,
-        String country,
-        int id
+        int earnGM,
+        String bornCountry
 ) { }
