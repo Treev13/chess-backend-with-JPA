@@ -1,14 +1,16 @@
 package com.example.chessbackendwithjpa.controller.dto;
 
+import java.math.BigDecimal;
+
 public record ScoresByTournamentDTO(
-        int id,
+        Long id,
         String event,
         String player,
-        int years,
-        int months,
-        int elo,
-        double points,
-        int games,
-        int o_elo_avg,
-        int performance) {
+        BigDecimal years,
+        BigDecimal months,
+        BigDecimal elo,
+        BigDecimal points,
+        Long games,
+        BigDecimal oEloAvg,
+        BigDecimal performance) {
 }

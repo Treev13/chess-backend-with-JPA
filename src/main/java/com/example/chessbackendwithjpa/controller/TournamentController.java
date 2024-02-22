@@ -1,5 +1,6 @@
 package com.example.chessbackendwithjpa.controller;
 
+import com.example.chessbackendwithjpa.controller.dto.ScoresByTournamentDTO;
 import com.example.chessbackendwithjpa.controller.dto.TournamentDTO;
 import com.example.chessbackendwithjpa.model.Tournament;
 import com.example.chessbackendwithjpa.service.TournamentService;
@@ -26,6 +27,11 @@ public class TournamentController {
   @GetMapping("/tournament/{id}")
   public TournamentDTO getTournamentById(@PathVariable Long id) {
     return tournamentService.getTournamentById(id);
+  }
+
+  @GetMapping("/tournament/{id}/players")
+  public List<ScoresByTournamentDTO> getPlayersByTournament(@PathVariable Long id) {
+    return tournamentService.getPlayersByTour(id);
   }
 
   @PostMapping("/tournament/new")

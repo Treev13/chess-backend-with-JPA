@@ -1,10 +1,14 @@
 package com.example.chessbackendwithjpa.service;
 
+import com.example.chessbackendwithjpa.controller.dto.ScoresByTournamentDTO;
 import com.example.chessbackendwithjpa.controller.dto.TournamentDTO;
 import com.example.chessbackendwithjpa.model.Tournament;
 import com.example.chessbackendwithjpa.repository.TournamentRepository;
+import jakarta.persistence.Tuple;
 import org.springframework.stereotype.Service;
 
+import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -32,7 +36,26 @@ public class TournamentService {
             tour.getType()
     );
   }
-
+  public List<ScoresByTournamentDTO> getPlayersByTour(Long id) {
+    List<Tuple> result = tournamentRepository.getPlayersByTour(id);
+    List<ScoresByTournamentDTO> players = new ArrayList<>();
+    for (Tuple tuple : result) {
+      ScoresByTournamentDTO dto = new ScoresByTournamentDTO(
+              tuple.get("id", Long.class),
+              tuple.get("event", String.class),
+              tuple.get("player", String.class),
+              tuple.get("years", BigDecimal.class),
+              tuple.get("months", BigDecimal.class),
+              tuple.get("elo", BigDecimal.class),
+              tuple.get("points", BigDecimal.class),
+              tuple.get("games", Long.class),
+              tuple.get("o_elo_avg", BigDecimal.class),
+              tuple.get("performance", BigDecimal.class)
+      );
+      players.add(dto);
+    }
+    return players;
+  }
   public void addTournament(TournamentDTO tour) {
     Tournament newTour = Tournament.builder()
             .name(tour.name())
